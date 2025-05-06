@@ -1,0 +1,265 @@
+Linux class
+
+cd 
+cd ..
+mv
+rm
+cp
+mdir
+rmdir
+echo
+history
+ls
+ls -a
+ls -aR
+ls -l
+bash
+touch
+'file with spaces'
+
+Tar
+-c
+-x
+-f name of file
+-z gzip compress archive.tgz or tar.gz
+-j bzip compress 
+-J xz compress
+
+
+gzip
+-k compress and keep original
+-d decompress
+gunzip
+
+bzip2
+-k
+-d
+bunzip2
+
+xz
+-k
+-d
+unxz 
+
+
+
+redirection of standard input/output
+ > output to file
+2> error.txt
+> output 2>&1 move errors to standard output 
+>> append the file 
+
+| less make output the input
+
+
+
+text manipulation
+head - top of txt file
+tail - bottom of txt file -n number of lines +2 starting at line 2
+
+
+sort 
+default alphabetical
+-r reverse alphabetical
+
+cut
+-C CHARACTERS
+-d delimiter -d, -f(field) 
+
+grep 
+
+-i case insensitive needs to be quotes "QOUTE"
+[] fiinds anything in the brakets 
+. any character but has to be a character
+* previous character exists 0 or more times "ap*l" not the same as globbing
+
+extended regex
+grep -E "el?o" fruits.csv - ? can only match 0 or 1 of previous character
+
+wc word count 
+-c bytes
+-m characters
+-l lines
+
+; strings commands together
+
+bash is born again shell
+
+vi 
+i insert mode
+w write 
+escape command mode
+:q quit
+
+nano
+self explanatory
+
+#!/bin/bash start every shell script
+
+
+exit status
+$?
+0 return is finished without error
+
+
+free
+shows current memory
+
+free -h
+human readable
+
+ps
+whats using the ram
+
+ps -aux 
+all running commands and user running them
+
+top
+ineratice look at usage  and processes
+
+a PID is the process ID
+
+virtual filesystems
+/dev /proc /sys
+
+/dev
+way to interact with hardware
+
+/proc
+running process information and other kernel information /sys became new filesystem for non process information
+
+/sys 
+other kernel stuff (didn't take off as well as planned)
+
+
+/bin /usr/bin needed for system rescue vs most programs
+
+/sbin & /usr/sbin system config tools
+
+/usr/share/bin programs for other apps like things apache would use
+
+when hard drives were smaller separating things were better
+
+/boot where kernel files live
+
+/etc configuration files
+
+/var/log log files
+
+/usr/local/bin & usr/local/etc locally compiled programs not installed with package managers and such so package manager files aren't overwritten
+
+systemd - journalctl -u log files
+
+
+networking
+
+ifconfig - ip address show - ip a
+
+route - route -n - ip route
+
+netstat - netstat -tuna - ss -tuna - ss
+
+
+
+DNS
+
+cat /etc/hosts (local dns )
+
+cat /etc/resolv.conf ( dns servers )
+
+USER PERMISSIONS
+
+regular users 
+/home/username
+UID/GID start with 500 or 1000
+
+system users
+
+program user
+home dir can be anything
+
+root user
+UID 0
+superuser
+home dir /root/
+do not use as a users account
+
+su become another user by default it goes root regardless needs root password
+
+SUDO do things as a different user root by default needs users password
+
+UID used in permissions attached to files
+
+GID group ID 
+useful for sharing files and directories
+
+ls -n group and user ID
+
+id <username>
+
+last last user that login
+
+w - what users is doing 
+
+"sudo su -" become root user
+
+creating deleting modifying users
+
+useradd 
+-d specifies home directory
+-G gid GROUPS
+-k skel directory
+-m creates home dorectory
+
+groupadd
+usermod 
+
+userdel -f -r
+
+file permissions and ownership
+
+----------
+type-user-group-other 
+
+- regular file
+d is directory
+
+read write execute
+
+rwx
+
+dash or letter
+
+-rwx-xr-x
+
+a directory with x means you can cd into it
+
+chmod permission changes
+
+chmod ugo+x <filename> user group other
+
+
+chowm change owenership (must have root permissions SUDO)
+
+chown user.group cat
+
+octal notation
+-421421421
+
+add them up
+read = 4
+write = 2
+execute = 1
+
+-rwxrw-r--
+ 421420400
+  7  6  4
+
+cmod 764 <filename>
+
+ 
+
+
+
+
+
