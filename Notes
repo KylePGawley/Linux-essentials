@@ -259,7 +259,13 @@ cmod 764 <filename>
 
  symbolic linking 
 
+ln -s symbolic link
+basically a shortcut, dosntt contain file just points to it
 
+sticky bits
+adds the ability to rename and remove only by root and owner
+chmod +t <filename>
 
+chmod 1777 <filename> adding the one adds sticky bit
 
-
+only on folders! 
